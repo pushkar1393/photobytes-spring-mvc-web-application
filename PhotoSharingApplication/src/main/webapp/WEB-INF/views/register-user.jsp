@@ -15,20 +15,33 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
+
 .row {
-	margin: 10px 0px 0px 0px;
+	margin: 10px 80px 0px 80px;
 }
+.btn {
+height: 40pt;
+transition: 0.3s;
+}
+.text-center {
+padding:15pt;
+}
+.row {
+padding:7pt;
+}
+
+
 </style>
 <title>PhotoBytes</title>
 </head>
 <body>
 	<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 	<br />
-	<div class="container">
+	<div class="banner overlay container-fluid">
 		<h2 class="text-center">Register a New User</h2>
 
 		<form:form action="${contextPath}/user/register" commandName="user"
-			method="post">
+			method="post" >
 
 			<div class="row">
 				<div class="col-xs-6 col-xs-offset-3">

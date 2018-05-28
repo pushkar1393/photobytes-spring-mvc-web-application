@@ -19,60 +19,101 @@
 }
 
 .banner {
-	background: url(${contextPath}"/pkg/resources/images/home.jpg"); background-size : cover;
-	height: 85vh;
-	background-size: cover;
+	background: url(${contextPath}"/pkg/resources/images/home.jpg");
+	background-size : cover;
+
 }
 
 .overlay {
-	background-color: rgba(255, 255, 255, 0.4);
-	height: 85vh;
+	background-color: rgba(255, 255, 255, 0.2);
+	height: 100vh;
 }
 
 a {
-	margin: 10px;
+	padding: 10px;
+	font-family: verdana
 }
 
-.big{
-height : 45pt;
-font-family :verdana;
-padding: 8pt 0pt 8pt 0pt;
+.btn-primary {
+transition: 0.3s;
+}
+
+.text-left{
+color: #fff;
+padding: 5pt 0pt 5pt 0pt;
+margin: 25pt 0pt 0pt 0pt;
+float:left;
+}
+
+header .container-fluid {
+margin : 0pt 20pt;
+border-bottom: 1px solid #ffff;
+}
+
+h1{
+font-size:50px;
+width: 50vw;
+}
+
+.navbar .btn{
+color: #fff;
 font-size: 15pt;
- border: 2px solid rgba(255, 255, 255, 0.6);
- border-radius: 20pt;
-background-color: rgba(255, 255, 255, 0.6);
+width: inherit;
 }
 
-.big:hover{
-background-color: rgba(255, 255, 255, 0.9);
+li{
+list-style-type: none;
+padding-top:1px;
+}
+.navbar li>a {
+padding-bottom: 10px;
+transition: 0.3s;
+}
+li a:hover {
+border-bottom: 2px solid #fff;
+border-radius: 0px;
+text-shadow:0 0 2px rgba(0,0,255,0.5);
 }
 
+.navbar{
+float:right;
+width:inherit;
+margin: 41pt 30pt 0pt 0pt;
+border-bottom:0px solid transparent;
+}
+
+.clearfix {
+clear:both;
+}
 </style>
 <title>PhotoBytes</title>
 </head>
 <body>
 	<c:set var="contextPath" value="${pageContext}" />
-
+	<div class="banner">
+	<div class="overlay">
+	<header>
 	<div class="container-fluid">
-		<h2 class="text-center">PhotoBytes</h2>
+		<h1 class="text-left">PhotoBytes</h1>
+		<nav>
+			<ul class="navbar navbar-nav ">
+				<li><a class="col-xs-4 btn" href="user/register">Register</a></li>
+				<li>	<a class="col-xs-4 btn" data-toggle="modal"
+					data-target="#loginForm">Login</a></li>
+			</ul>
+		</nav>
 	</div>
-	<div class="banner container-fluid">
-		<div class="overlay container-fluid">
-			<div class="row text-center">
-				<div class="col-xs-4"></div>
-				<a class="col-xs-4 btn  big" href="user/register">Register</a>
-			</div>
-			<div class="row text-center">
-				<div class="col-xs-4"></div>
-				<a class="col-xs-4 btn big" data-toggle="modal"
-					data-target="#loginForm">Login</a>
-			</div>
-		</div>
-	</div>
-	<div class="container-fluid">
+	</header>
+	<section class="clearfix">
+		
+		</section>
+	<footer>
+	<div class="container-fluid  sticky-bottom">
 		<p class="text-center">copyright details</p>
 	</div>
-
+	</footer>
+	</div>
+</div>
 
 	<!-- login form modal -->
 

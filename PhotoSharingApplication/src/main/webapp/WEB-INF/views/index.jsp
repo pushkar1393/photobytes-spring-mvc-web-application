@@ -32,24 +32,39 @@
 a {
 	margin: 10px;
 }
+
+.big{
+height : 45pt;
+font-family :verdana;
+padding: 8pt 0pt 8pt 0pt;
+font-size: 15pt;
+ border: 2px solid rgba(255, 255, 255, 0.6);
+ border-radius: 20pt;
+background-color: rgba(255, 255, 255, 0.6);
+}
+
+.big:hover{
+background-color: rgba(255, 255, 255, 0.9);
+}
+
 </style>
-<title>PicShare</title>
+<title>PhotoBytes</title>
 </head>
 <body>
 	<c:set var="contextPath" value="${pageContext}" />
 
 	<div class="container-fluid">
-		<h2 class="text-center">PicShare</h2>
+		<h2 class="text-center">PhotoBytes</h2>
 	</div>
 	<div class="banner container-fluid">
 		<div class="overlay container-fluid">
 			<div class="row text-center">
 				<div class="col-xs-4"></div>
-				<a class="col-xs-4 btn btn-primary" href="user/register">Register</a>
+				<a class="col-xs-4 btn  big" href="user/register">Register</a>
 			</div>
 			<div class="row text-center">
 				<div class="col-xs-4"></div>
-				<a class="col-xs-4 btn btn-primary" data-toggle="modal"
+				<a class="col-xs-4 btn big" data-toggle="modal"
 					data-target="#loginForm">Login</a>
 			</div>
 		</div>

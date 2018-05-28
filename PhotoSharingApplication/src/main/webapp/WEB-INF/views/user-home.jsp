@@ -14,7 +14,7 @@
 
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>PicShare</title>
+<title>PhotoBytes</title>
 <style type="text/css">
 .space{
 margin-top:10px !important;
@@ -26,7 +26,9 @@ margin-bottom:40px !important
 	<div class="container-fluid">
 		<c:import url="header.jsp"></c:import>
 	</div>
+	
 	<div class="container">
+	<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 		<c:choose>
 			<c:when test="${empty requestScope.feeds}">
 				<h3>No feeds to display</h3>

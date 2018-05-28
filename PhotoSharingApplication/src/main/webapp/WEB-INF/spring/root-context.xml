@@ -8,7 +8,6 @@
 	<bean id="userValidator" class="com.push.pkg.validator.UserValidator"></bean>
 	<bean id="userDao" class="com.push.pkg.dao.UserDAO"></bean>
 	<bean id="followerDao" class="com.push.pkg.dao.FollowerDAO"></bean>
-
 	<bean id="uploadDao" class="com.push.pkg.dao.UploadDAO"></bean>
 	
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

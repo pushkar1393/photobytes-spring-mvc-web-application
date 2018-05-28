@@ -55,7 +55,12 @@ public class UserController {
 	}
 
 	// to redirect to login page (replaced by modal)
-
+	/**
+	 * @deprecated
+	 * @param request
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/user/login", method = RequestMethod.GET)
 	protected ModelAndView redirectUserPage(HttpServletRequest request) throws Exception {
 		System.out.print("redirectToLogin");

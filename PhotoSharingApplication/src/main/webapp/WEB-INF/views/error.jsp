@@ -19,7 +19,7 @@
 margin-top:100px;
 }
 </style>
-<title>PicShare</title>
+<title>PhotoBytes</title>
 </head>
 <body>
 <div class="container">

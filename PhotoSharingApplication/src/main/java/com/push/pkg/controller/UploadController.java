@@ -3,6 +3,8 @@ package com.push.pkg.controller;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -147,17 +149,17 @@ public class UploadController {
 
 			HttpSession session = (HttpSession) request.getSession();
 			User u = (User) session.getAttribute("user");
-			String check = File.separator;
-			String dir = check + "user_images_" + u.getPersonID();
+			String dir = "user_images_" + u.getPersonID();
 
 			File directory;
 
-			String path = "C:/SpringProjects/PhotoSharingApplication/src/main/resources/images";
+			String path = getPath();
+			System.out.println(path);
 			path += dir;
 			directory = new File(path);
 			boolean temp = directory.exists();
 			if (!temp) {
-				temp = directory.mkdir();
+				temp = directory.mkdirs();
 			}
 			if (temp) {
 				CommonsMultipartFile photoInMemory = photo.getPic();
@@ -165,11 +167,10 @@ public class UploadController {
 
 				File localFile = new File(directory.getPath(), fileName);
 				photoInMemory.transferTo(localFile);
-				String fName = check + "images" + dir + check + fileName;
+				
+				String fName = File.separatorChar+ "pkg" + localFile.getPath().split("/pkg")[1];
 				photo.setFileName(fName);
 				System.out.println("File is stored at" + localFile.getPath());
-				System.out.print("registerNewUser");
-				// User u = (User) session.getAttribute("user");
 				photo.setUser(u);
 				photo.setUploadDate(new Date());
 				Photo p = uploadDao.upload(photo);
@@ -177,6 +178,7 @@ public class UploadController {
 
 			} else {
 				System.out.println("Failed to create directory!");
+				mv = new ModelAndView("error");
 			}
 
 		} catch (IllegalStateException e) {
@@ -246,4 +248,17 @@ public class UploadController {
 		}
 		return following;
 	}
+	
+	
+	public String getPath() throws UnsupportedEncodingException {
+		String path = this.getClass().getClassLoader().getResource("").getPath();
+		String fullPath = URLDecoder.decode(path, "UTF-8");
+		String pathArr[] = fullPath.split("/WEB-INF/classes/");
+		
+		fullPath = pathArr[0];
+		System.out.println(fullPath);
+		String reponsePath = "";
+		reponsePath = new File(fullPath).getPath() + File.separatorChar +"resources"+File.separatorChar + "images"+File.separatorChar;
+		return reponsePath;
+		}
 }

@@ -17,7 +17,7 @@
 <script>
 	
 </script>
-<title>PicShare</title>
+<title>PhotoBytes</title>
 </head>
 <body>
 	<div class="container-fluid">

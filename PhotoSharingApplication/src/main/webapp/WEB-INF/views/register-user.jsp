@@ -19,7 +19,7 @@
 	margin: 10px 0px 0px 0px;
 }
 </style>
-<title>PicShare</title>
+<title>PhotoBytes</title>
 </head>
 <body>
 	<c:set var="contextPath" value="${pageContext.request.contextPath}" />

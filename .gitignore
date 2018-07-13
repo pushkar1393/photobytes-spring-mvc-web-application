@@ -1,0 +1,4 @@
+#Adding Mac structural files to ignore
+
+*/.DS_Store
+**/.DS_Store

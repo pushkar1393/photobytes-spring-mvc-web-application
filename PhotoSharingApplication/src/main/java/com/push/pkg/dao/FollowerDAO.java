@@ -47,12 +47,6 @@ public class FollowerDAO extends DAO {
 		try {
 			begin();
 			getSession().merge(followee);
-			/*Query q = getSession().createSQLQuery("insert into picsharedb.user_follower_table (personID, followerID) values (:personID,:followerID)");
-			q.setLong("personID", followee.getPersonID());
-			q.setLong("followerID", follower.getPersonID());
-			int u = q.executeUpdate();
-			if(u ==1){
-			System.out.print("inside dao");*/
 			commit();
 			flag = true;
 			//}
@@ -69,14 +63,6 @@ public class FollowerDAO extends DAO {
 		try {
 			begin();
 			getSession().merge(followee);
-			/*Query q = getSession()
-					.createSQLQuery(
-							"DELETE FROM picsharedb.user_follower_table WHERE personID= :personID and followerID= :followerID")
-					.setParameter("personID", followee.getPersonID())
-					.setParameter("followerID", follower.getPersonID());
-			int up = q.executeUpdate();
-			//if(up >=1){
-			System.out.println("updat"); */
 			commit();
 			//}
 			System.out.println("commited");

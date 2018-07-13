@@ -72,7 +72,7 @@ transition: 0.3s;
 li a:hover {
 border-bottom: 2px solid #fff;
 border-radius: 0px;
-text-shadow:0 0 2px rgba(0,0,255,0.5);
+text-shadow:0 0 2px rgba(40,0,255,0.4);
 }
 
 .navbar{
